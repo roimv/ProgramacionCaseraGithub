@@ -5,13 +5,19 @@ def likes(nombres):
         texto = "no one likes this"
         
     elif len(nombres) == 1:
-        texto = nombres + "like this"
+        texto = str(nombres[0]) + " likes this"
         
-    elif len(nombres) == 2:
-        texto = nombres[0] + "and" + nombres[1] + "like this"
+    elif len(nombres) >1 and len(nombres) <4:
+        for nombre in range(0, len(nombres) - 1):
         
-    elif len(nombres) == 3:
-        restoNombres = nombres[2:]
-        texto = nombres[0] + "," + nombres[1] + restoNombres + "like this"
+            texto = texto + nombres[nombre] + ", "
+        texto = texto[:-2]
+        texto = texto + " and " + str(nombres[len(nombres) - 1]) + " like this"
+        
+    else:
+        for nombre in range(0,2):
+             texto = texto + nombres[nombre] + ", "
+        texto = texto[:-2]
+        texto = texto + " and " + str(len(nombres)-2) + " others like this"
     
     return texto
