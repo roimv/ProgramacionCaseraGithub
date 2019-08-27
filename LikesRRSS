@@ -1,0 +1,17 @@
+def likes(nombres):
+    texto = ""
+    
+    if len(nombres) == 0:
+        texto = "no one likes this"
+        
+    elif len(nombres) == 1:
+        texto = nombres + "like this"
+        
+    elif len(nombres) == 2:
+        texto = nombres[0] + "and" + nombres[1] + "like this"
+        
+    elif len(nombres) == 3:
+        restoNombres = nombres[2:]
+        texto = nombres[0] + "," + nombres[1] + restoNombres + "like this"
+    
+    return texto
